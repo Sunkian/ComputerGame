@@ -80,6 +80,7 @@ void Shapes::LoadObj() {
 
 
 void Shapes::Load() {
+    //Vertex Shader
     const char * vs_source[] = { R"(
 #version 330 core
 
@@ -92,7 +93,7 @@ void main(void){
 }
 )" };
 
-    
+    //Fragment Shader
     const char * fs_source[] = { R"(
 #version 330 core
 

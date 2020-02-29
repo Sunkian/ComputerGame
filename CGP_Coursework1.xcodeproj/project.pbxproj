@@ -13,7 +13,8 @@
 		393EEE6023EF5CFF005AEB2A /* Graphics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393EEE5E23EF5CFF005AEB2A /* Graphics.cpp */; };
 		393EEE6323EF5D0D005AEB2A /* Shapes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393EEE6123EF5D0D005AEB2A /* Shapes.cpp */; };
 		393EEE6523EF5D28005AEB2A /* Source.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 393EEE6423EF5D28005AEB2A /* Source.cpp */; };
-		39E73AF923F32728004513C0 /* ParticleSystem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 39E73AF723F32728004513C0 /* ParticleSystem.cpp */; };
+		398A587D24081E220070BEAC /* Particles.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 398A587B24081E220070BEAC /* Particles.cpp */; };
+		398A588024081E2C0070BEAC /* Flock.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 398A587E24081E2C0070BEAC /* Flock.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -38,8 +39,10 @@
 		393EEE6123EF5D0D005AEB2A /* Shapes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shapes.cpp; sourceTree = "<group>"; };
 		393EEE6223EF5D0D005AEB2A /* Shapes.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Shapes.hpp; sourceTree = "<group>"; };
 		393EEE6423EF5D28005AEB2A /* Source.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Source.cpp; sourceTree = "<group>"; };
-		39E73AF723F32728004513C0 /* ParticleSystem.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ParticleSystem.cpp; sourceTree = "<group>"; };
-		39E73AF823F32728004513C0 /* ParticleSystem.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ParticleSystem.hpp; sourceTree = "<group>"; };
+		398A587B24081E220070BEAC /* Particles.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Particles.cpp; sourceTree = "<group>"; };
+		398A587C24081E220070BEAC /* Particles.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Particles.hpp; sourceTree = "<group>"; };
+		398A587E24081E2C0070BEAC /* Flock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Flock.cpp; sourceTree = "<group>"; };
+		398A587F24081E2C0070BEAC /* Flock.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Flock.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,8 +84,10 @@
 				393EEE6123EF5D0D005AEB2A /* Shapes.cpp */,
 				393EEE6223EF5D0D005AEB2A /* Shapes.hpp */,
 				393EEE6423EF5D28005AEB2A /* Source.cpp */,
-				39E73AF723F32728004513C0 /* ParticleSystem.cpp */,
-				39E73AF823F32728004513C0 /* ParticleSystem.hpp */,
+				398A587B24081E220070BEAC /* Particles.cpp */,
+				398A587C24081E220070BEAC /* Particles.hpp */,
+				398A587E24081E2C0070BEAC /* Flock.cpp */,
+				398A587F24081E2C0070BEAC /* Flock.hpp */,
 			);
 			path = CGP_Coursework1;
 			sourceTree = "<group>";
@@ -154,8 +159,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				39E73AF923F32728004513C0 /* ParticleSystem.cpp in Sources */,
 				393EEE6023EF5CFF005AEB2A /* Graphics.cpp in Sources */,
+				398A587D24081E220070BEAC /* Particles.cpp in Sources */,
+				398A588024081E2C0070BEAC /* Flock.cpp in Sources */,
 				393EEE6523EF5D28005AEB2A /* Source.cpp in Sources */,
 				393EEE6323EF5D0D005AEB2A /* Shapes.cpp in Sources */,
 			);
