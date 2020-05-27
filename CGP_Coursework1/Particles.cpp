@@ -7,3 +7,7 @@
 //
 
 #include "Particles.hpp"
+
+Particles::Particles() {
+
+};

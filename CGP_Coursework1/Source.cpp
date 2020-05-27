@@ -135,14 +135,37 @@ float positionQueenZ = 2.0f;
 
 // FLOCK
 //velocities
-float velocityFlockX = 0.0f;
-float velocityFlockY = 0.0f;
-float velocityFlockZ = 0.0f;
-//positions
-float positionFlockX = 2.0f;
-float positionFlockY = 2.6f;
-float positionFlockZ = 2.0f;
+float velocityFlockX1 = 0.0f;
+float velocityFlockY1 = 0.0f;
+float velocityFlockZ1 = 0.0f;
 
+float velocityFlockX2 = 0.0f;
+float velocityFlockY2 = 0.0f;
+float velocityFlockZ2 = 0.0f;
+
+float velocityFlockX3 = 0.0f;
+float velocityFlockY3 = 0.0f;
+float velocityFlockZ3 = 0.0f;
+
+float velocityFlockX4 = 0.0f;
+float velocityFlockY4 = 0.0f;
+float velocityFlockZ4 = 0.0f;
+//positions
+float positionFlockX1 = 2.0f;
+float positionFlockY1 = 2.6f;
+float positionFlockZ1 = 2.0f;
+
+float positionFlockX2 = 2.0f;
+float positionFlockY2 = 2.0f;
+float positionFlockZ2 = 2.0f;
+
+float positionFlockX3 = 3.0f;
+float positionFlockY3 = 3.0f;
+float positionFlockZ3 = 2.0f;
+
+float positionFlockX4 = 2.0f;
+float positionFlockY4 = 3.0f;
+float positionFlockZ4 = 1.0f;
 
 
 
@@ -481,7 +504,7 @@ void Flock()
     myFlock1.proj_matrix = myGraphics.proj_matrix;
     
     glm::mat4 mv_matrix_flock2 =
-        glm::translate(glm::vec3(positionFlockX, positionFlockY, positionFlockZ)) *
+        glm::translate(glm::vec3(positionFlockX1, positionFlockY1, positionFlockZ1)) *
         glm::scale(glm::vec3(0.5f, 0.5f, 0.5f)) *
         glm::rotate(glm::radians(-90.0f), glm::vec3(positionQueenX, positionQueenY, positionQueenZ)) *
         glm::mat4(1.0f);
@@ -489,14 +512,14 @@ void Flock()
     myFlock2.proj_matrix = myGraphics.proj_matrix;
     
     glm::mat4 mv_matrix_flock3 =
-        glm::translate(glm::vec3(positionFlockX, positionFlockY + 2.0f, positionFlockZ)) *
+        glm::translate(glm::vec3(positionFlockX2, positionFlockY2, positionFlockZ2)) *
         glm::scale(glm::vec3(0.5f, 0.5f, 0.5f)) *
         glm::mat4(1.0f);
     myFlock3.mv_matrix = myGraphics.viewMatrix * mv_matrix_flock3;
     myFlock3.proj_matrix = myGraphics.proj_matrix;
     
     glm::mat4 mv_matrix_flock4 =
-        glm::translate(glm::vec3(positionFlockX, positionFlockY, positionFlockZ + 2.0f)) *
+        glm::translate(glm::vec3(positionFlockX3, positionFlockY3, positionFlockZ3)) *
         glm::scale(glm::vec3(0.5f, 0.5f, 0.5f)) *
     
         glm::mat4(1.0f);
@@ -504,27 +527,75 @@ void Flock()
     myFlock4.proj_matrix = myGraphics.proj_matrix;
     
     glm::mat4 mv_matrix_flock5 =
-        glm::translate(glm::vec3(positionFlockX + 2.0f, positionFlockY, positionFlockZ)) *
+        glm::translate(glm::vec3(positionFlockX4, positionFlockY4, positionFlockZ4)) *
         glm::scale(glm::vec3(0.5f, 0.5f, 0.5f)) *
         glm::mat4(1.0f);
     myFlock5.mv_matrix = myGraphics.viewMatrix * mv_matrix_flock5;
     myFlock5.proj_matrix = myGraphics.proj_matrix;
     
-    float gravityAQX, gravityAQY, gravityAQZ; // Gravity made by the Queen, the flock is attracted by her
-    gravityAQX = -(positionQueenX - positionFlockX) * queenGravityCoeff;
-    gravityAQY = -(positionQueenY - positionFlockY) * queenGravityCoeff;
-    gravityAQZ = -(positionQueenZ - positionFlockZ) * queenGravityCoeff;
+    //FOR 1
+    float gravityAQX1, gravityAQY1, gravityAQZ1; // Gravity made by the Queen, the flock is attracted by her
+    gravityAQX1 = -(positionQueenX - positionFlockX1) * queenGravityCoeff;
+    gravityAQY1 = -(positionQueenY - positionFlockY1) * queenGravityCoeff;
+    gravityAQZ1 = -(positionQueenZ - positionFlockZ1) * queenGravityCoeff;
     
-    velocityFlockX = velocityFlockX * 0.5f + gravityAQX; //on reduce la vitesse plus on se rapproche
-    positionFlockX -= velocityFlockX;
+    velocityFlockX1 = velocityFlockX1 * 0.5f + gravityAQX1; //on reduce la vitesse plus on se rapproche
+    positionFlockX1 -= velocityFlockX1;
     // + (((double) rand() / (RAND_MAX)) - 0.5) * 0.1
     
-    velocityFlockY = velocityFlockY * 0.5f + gravityAQY;
-    positionFlockY -= velocityFlockY;
+    velocityFlockY1 = velocityFlockY1 * 0.5f + gravityAQY1;
+    positionFlockY1 -= velocityFlockY1;
     
-    velocityFlockZ = velocityFlockZ * 0.5f + gravityAQZ;
-    positionFlockZ -= velocityFlockZ;
+    velocityFlockZ1 = velocityFlockZ1 * 0.5f + gravityAQZ1;
+    positionFlockZ1 -= velocityFlockZ1;
     
+    //FOR 2
+    float gravityAQX2, gravityAQY2, gravityAQZ2; // Gravity made by the Queen, the flock is attracted by her
+    gravityAQX2 = -(positionQueenX - positionFlockX2) * queenGravityCoeff;
+    gravityAQY2 = -(positionQueenY - positionFlockY2) * queenGravityCoeff;
+    gravityAQZ2 = -(positionQueenZ - positionFlockZ2) * queenGravityCoeff;
+    
+    velocityFlockX2 = velocityFlockX2 * 0.5f + gravityAQX2; //on reduce la vitesse plus on se rapproche
+    positionFlockX2 -= velocityFlockX2;
+    // + (((double) rand() / (RAND_MAX)) - 0.5) * 0.1
+    
+    velocityFlockY2 = velocityFlockY2 * 0.5f + gravityAQY2;
+    positionFlockY2 -= velocityFlockY2;
+    
+    velocityFlockZ2 = velocityFlockZ2 * 0.5f + gravityAQZ2;
+    positionFlockZ2 -= velocityFlockZ2;
+    
+    //FOR 3
+    float gravityAQX3, gravityAQY3, gravityAQZ3; // Gravity made by the Queen, the flock is attracted by her
+    gravityAQX3 = -(positionQueenX - positionFlockX3) * queenGravityCoeff;
+    gravityAQY3 = -(positionQueenY - positionFlockY3) * queenGravityCoeff;
+    gravityAQZ3 = -(positionQueenZ - positionFlockZ3) * queenGravityCoeff;
+    
+    velocityFlockX3 = velocityFlockX3 * 0.5f + gravityAQX3; //on reduce la vitesse plus on se rapproche
+    positionFlockX3 -= velocityFlockX3;
+    // + (((double) rand() / (RAND_MAX)) - 0.5) * 0.1
+    
+    velocityFlockY3 = velocityFlockY3 * 0.5f + gravityAQY3;
+    positionFlockY3 -= velocityFlockY3;
+    
+    velocityFlockZ3 = velocityFlockZ3 * 0.5f + gravityAQZ3;
+    positionFlockZ3 -= velocityFlockZ3;
+    
+    //FOR 4
+    float gravityAQX4, gravityAQY4, gravityAQZ4; // Gravity made by the Queen, the flock is attracted by her
+    gravityAQX4 = -(positionQueenX - positionFlockX4) * queenGravityCoeff;
+    gravityAQY4 = -(positionQueenY - positionFlockY4) * queenGravityCoeff;
+    gravityAQZ4 = -(positionQueenZ - positionFlockZ4) * queenGravityCoeff;
+    
+    velocityFlockX4 = velocityFlockX4 * 0.5f + gravityAQX4; //on reduce la vitesse plus on se rapproche
+    positionFlockX4 -= velocityFlockX2;
+    // + (((double) rand() / (RAND_MAX)) - 0.5) * 0.1
+    
+    velocityFlockY4 = velocityFlockY4 * 0.5f + gravityAQY4;
+    positionFlockY4 -= velocityFlockY4;
+    
+    velocityFlockZ4 = velocityFlockZ4 * 0.5f + gravityAQZ4;
+    positionFlockZ4 -= velocityFlockZ4;
     
 
     //accelerationQueenX = modifyAcceleration(accelerationQueenX); //function with a parameter
@@ -544,20 +615,128 @@ void Flock()
         velocityQueenY = -velocityQueenY;
     }
     
+    //1
+    if (positionQueenX - positionFlockX1 <= 0.5f )
+    {
+        velocityFlockX1 = velocityFlockX1 * 1.0f - gravityAQX1;
     
-    if (positionQueenX - positionFlockX <= 0.5f )
+    }
+    else if (positionQueenY - positionFlockY1 <= 0.5f)
     {
-        velocityFlockX = velocityFlockX * 1.0f - gravityAQX;
+        velocityFlockY1 = velocityFlockY1 * 1.0f - gravityAQY1;
+    }
+    else if (positionQueenZ - positionFlockZ1 <= 0.5f)
+    {
+        velocityFlockZ1 = velocityFlockZ1 * 1.0f - gravityAQZ1;
+    }
+    
+    
+    
+    //2
+    if (positionQueenX - positionFlockX2 <= 0.5f )
+    {
+        velocityFlockX2 = velocityFlockX2 * 1.0f - gravityAQX2;
+    }
+    else if (positionQueenY - positionFlockY2 <= 0.5f)
+    {
+        velocityFlockY2 = velocityFlockY2 * 1.0f - gravityAQY2;
+    }
+    else if (positionQueenZ - positionFlockZ2 <= 0.5f)
+    {
+        velocityFlockZ2 = velocityFlockZ2 * 1.0f - gravityAQZ2;
+    }
+    
+    //2
+    if (positionFlockX1 - positionFlockX2 <= 0.5f )
+    {
+        velocityFlockX2 = 0.0f;
+    }
+    else if (positionFlockY1 - positionFlockY2 <= 0.5f)
+    {
+        velocityFlockY2 = 0.0f;
+    }
+    else if (positionFlockZ1 - positionFlockZ2 <= 0.5f)
+    {
+        velocityFlockZ2 = 0.0f;
+    }
+    
+    //3
+    if (positionQueenX - positionFlockX3 <= 0.5f )
+    {
+        velocityFlockX3 = velocityFlockX3 * 1.0f - gravityAQX3;
+    }
+    else if (positionQueenY - positionFlockY3 <= 0.5f)
+    {
+        velocityFlockY3 = velocityFlockY3 * 1.0f - gravityAQY3;
+    }
+    else if (positionQueenZ - positionFlockZ3 <= 0.5f)
+    {
+        velocityFlockZ3 = velocityFlockZ3 * 1.0f - gravityAQZ3;
+    }
+    
+    if (positionFlockX1 - positionFlockX2 <= 1.0f )
+    {
+        velocityFlockX1 = -velocityFlockX1 - 1.2*gravityAQX1;
+    }
+    if (positionFlockY1 - positionFlockY2 <= 1.0f )
+    {
+        velocityFlockY1 = -velocityFlockY1 - 1.2*gravityAQY1;
+    }
+    if (positionFlockZ1 - positionFlockZ2 <= 0.5f )
+    {
+        velocityFlockZ1 = -velocityFlockZ1 - 1.0*gravityAQZ1;
     
     }
-    else if (positionQueenY - positionFlockY <= 0.5f)
+    
+    if (positionFlockX2 - positionFlockX1 <= 1.0f )
     {
-        velocityFlockY = velocityFlockY * 1.0f - gravityAQY;
+        velocityFlockX2 = -velocityFlockX2 - 1.2*gravityAQX2;
+    
     }
-    else if (positionQueenZ - positionFlockZ <= 0.5f)
+    if (positionFlockY2 - positionFlockY1 <= 1.0f )
     {
-        velocityFlockZ = velocityFlockZ * 1.0f - gravityAQZ;
+        velocityFlockY2 = -velocityFlockY2 - 1.2*gravityAQY2;
+    
     }
+    if (positionFlockZ2 - positionFlockZ1 <= 1.0f )
+    {
+        velocityFlockZ2 = -velocityFlockZ2 - 1.2*gravityAQZ2;
+    
+    }
+    
+    
+    if (positionFlockX3 - positionFlockX1 <= 1.0f )
+    {
+        velocityFlockX3 = -velocityFlockX3 - 1.2*gravityAQX3;
+    
+    }
+    if (positionFlockY3 - positionFlockY1 <= 1.0f )
+    {
+        velocityFlockY3 = -velocityFlockY3 - 1.2*gravityAQY3;
+    
+    }
+    if (positionFlockZ3 - positionFlockZ1 <= 1.0f )
+    {
+        velocityFlockZ3 = -velocityFlockZ3 - 1.2*gravityAQZ3;
+    }
+        
+        if (positionFlockX3 - positionFlockX2 <= 1.0f )
+        {
+            velocityFlockX3 = -velocityFlockX3 - 1.2*gravityAQX3;
+        
+        }
+        if (positionFlockY3 - positionFlockY2 <= 1.0f )
+        {
+            velocityFlockY3 = -velocityFlockY3 - 1.2*gravityAQY3;
+        
+        }
+        if (positionFlockZ3 - positionFlockZ2 <= 1.0f )
+        {
+            velocityFlockZ3 = -velocityFlockZ3 - 1.2*gravityAQZ3;
+        }
+
+        
+    
 }
 
 float modifyAcceleration(float acc)
@@ -642,8 +821,8 @@ void renderScene() {
    
     myFlock1.Draw();
     myFlock2.Draw();
-    //myFlock3.Draw();
-    //myFlock4.Draw();
+    myFlock3.Draw();
+    myFlock4.Draw();
     //myFlock5.Draw();
     
     mySphere.Draw();

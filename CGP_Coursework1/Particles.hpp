@@ -29,6 +29,7 @@ public:
     //void Load();
     //void Draw();
 
+
     GLuint          program;
     GLuint          vao;
     GLuint          buffer;
